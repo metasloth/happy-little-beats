@@ -32,7 +32,7 @@ function onBobPlayerStateChange (event) {
 function onMusicPlayerReady (event) {
   console.log('ayy I see music')
   document.getElementById('music-player').style.borderColor = '#FF6D00'
-  musicPlayer.setVolume(17)
+  musicPlayer.setVolume(20)
 }
 function onMusicPlayerStateChange (event) {
   changeBorderColor(event.data, 'music-player')

@@ -8,6 +8,13 @@ html {
   height: 100%
 }
 
+h1 {
+  font-size: 16pt;
+}
+h2 {
+  font-size: 12pt;
+}
+
 .players {
   position: absolute;
   top: 50%;
@@ -36,16 +43,16 @@ html {
 }
 
 .gradlayer {
-    background: linear-gradient(to bottom, #000000 0%, #000000 100%);
+    background:black;
     bottom:0;
     left: 0;
-    opacity: 0.5;
+    opacity: 0.6;
     position: absolute;
     right:0;
     top:0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   iframe {
     height: 30%;
   }
