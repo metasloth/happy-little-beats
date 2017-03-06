@@ -86,8 +86,23 @@ function playPause () {
   }
 }
 
-function mixChange (value) {
-  bobPlayer.setVolume(100-value)
-  musicPlayer.setVolume(value)
-  document.getElementById('rangeValue').innerHTML = `${100-value}% / ${value}%`
+let masterVolume = 100
+let mixVolume = 20
+
+function volumeChange (value) {
+  masterVolume = value
+  updateVolumes()
+  document.getElementById('volume').innerHTML = `${masterVolume}%`
 }
+
+function mixChange (value) {
+  mixVolume = value
+  updateVolumes()
+  document.getElementById('mix').innerHTML = `${100-value}% / ${value}%`
+}
+
+function updateVolumes() {
+  bobPlayer.setVolume( (100-mixVolume) * (masterVolume * 0.01) )
+  musicPlayer.setVolume( mixVolume * (masterVolume * 0.01))
+}
+

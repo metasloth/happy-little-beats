@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <!--iframe API: https://developers.google.com/youtube/iframe_api_reference#Examples -->
   <!-- Music: https://www.youtube.com/watch?v=GJ4KPrrbOU4 -->
   <!-- Bob Ross: https://www.youtube.com/playlist?list=PLAEQD0ULngi67rwmhrkNjMZKvyCReqDV4 -->
   <title>happy little beats</title>
-  <link rel="shortcut icon" type="image/png" href="/favicon.png">
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="slider.css">
 </head>
+
 <body>
   <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="gradlayer"></div>
     <div class="w3-display-topleft w3-padding-large w3-xlarge">
       happy little beats
     </div>
+
     <div class="players">
       <div class="w3-row-padding">
-        <div class="w3-col m5 l5 w3-clear w3-container">
+        <div class="w3-col m4 l4 w3-clear w3-container">
           <iframe class="w3-center" id="bob-player" width="100%" height="360" src="https://www.youtube.com/embed/videoseries?list=PLAEQD0ULngi67rwmhrkNjMZKvyCReqDV4&enablejsapi=1&start=30&autoplay=1&fs=1"
             frameborder="0" style="border: solid 1px #37474F"></iframe>
         </div>
-        <div class="w3-col m2 l2 w3-clear w3-center">
+        <div class="w3-col m4 l4 w3-clear w3-center">
           <div class="controls">
             <div class="w3-padding">
+              <p>master</p>
+              <input class="slider" style="width:40%" type="range" value="100" id="mixRange" oninput="volumeChange(this.value)" min="0" max="100" step="1" />
+              <div id="volume"> 100% </div>
+            </div>
+            <div class="w3-padding">
               <p>mix</p>
-              <input type="range" id="mixRange" oninput="mixChange(this.value)" min="0" max="100" step="1"></input>
-              <div id="rangeValue"> n/a </div>
+              <input class="slider" style="width:40%" type="range" value="20" id="mixRange" oninput="mixChange(this.value)" min="0" max="100" step="1" />
+              <div id="mix"> 80% / 20% </div>
             </div>
             <div class="w3-padding">
               <button id="muteButton" onclick="muteAll()" class="clear-button w3-btn w3-round-xxlarge w3-hover-white w3-border">mute</button>
@@ -36,17 +46,20 @@
             </div>
           </div>
         </div>
-        <div class="w3-col m5 l5 w3-clear w3-container">
+        <div class="w3-col m4 l4 w3-clear w3-container">
           <iframe id="music-player" width="100%" height="360" src="https://www.youtube.com/embed/GJ4KPrrbOU4?enablejsapi=1&autoplay=1"
             frameborder="0" style="border: solid 1px #37474F"></iframe>
         </div>
       </div>
     </div>
+
     <div class="w3-display-bottommiddle w3-padding w3-text-gray">
       <a class="clear-button w3-btn w3-round-xxlarge w3-hover-white" href="https://github.com/metasloth/bob-ross-hop">source</a>      &nbsp&nbsp | &nbsp&nbsp
       <a class="clear-button w3-btn w3-round-xxlarge w3-hover-white" href="http://www.scottstedman.com/january-13th-2016/">photo</a>
     </div>
+
   </div>
   <script type="text/javascript" src="players.js"></script>
 </body>
+
 </html>
