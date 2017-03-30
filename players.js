@@ -24,14 +24,14 @@ function onYouTubeIframeAPIReady () {
 }
 function onBobPlayerReady (event) {
   console.log('ayy I see bob')
-  document.getElementById('bob-player').style.borderColor = '#FF6D00'
+  document.getElementById('bob-player').style.borderColor = 'white'
 }
 function onBobPlayerStateChange (event) {
   changeBorderColor(event.data, 'bob-player')
 }
 function onMusicPlayerReady (event) {
   console.log('ayy I see music')
-  document.getElementById('music-player').style.borderColor = '#FF6D00'
+  document.getElementById('music-player').style.borderColor = 'white'
   musicPlayer.setVolume(20)
 }
 function onMusicPlayerStateChange (event) {
@@ -42,17 +42,17 @@ function onMusicPlayerStateChange (event) {
 function changeBorderColor (playerStatus, player) {
   var color
   if (playerStatus == -1) {
-    color = '#37474F'; // unstarted = gray
+    color = 'white'; // unstarted = gray
   } else if (playerStatus == 0) {
-    color = '#FFFF00'; // ended = yellow
+    color = 'white'; // ended = yellow
   } else if (playerStatus == 1) {
-    color = '#33691E'; // playing = green
+    color = 'black'; // playing = black
   } else if (playerStatus == 2) {
-    color = '#DD2C00'; // paused = red
+    color = 'white'; // paused = red
   } else if (playerStatus == 3) {
-    color = '#AA00FF'; // buffering = purple
+    color = 'white'; // buffering = purple
   } else if (playerStatus == 5) {
-    color = '#FF6DOO'; // video cued = orange
+    color = 'white'; // video cued = orange
   }
   if (color) {
     document.getElementById(player).style.borderColor = color
