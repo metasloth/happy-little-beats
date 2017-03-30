@@ -1,2 +1,7 @@
 node_modules
+<<<<<<< HEAD
+=======
+.vscode
+bobross.txt
+>>>>>>> cd738a1e5bf2312f87adb4ad8e5427e49805c2bd
 sctest.py

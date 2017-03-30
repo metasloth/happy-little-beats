@@ -1,11 +1,5 @@
-// API Reference
-let tag = document.createElement('script')
-tag.id = 'iframe-demo'
-tag.src = 'https://www.youtube.com/iframe_api'
-let firstScriptTag = document.getElementsByTagName('script')[0]
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag)
 
-// Bob Ross Player
+// Let the API take control of the players
 let bobPlayer
 let musicPlayer
 function onYouTubeIframeAPIReady () {
@@ -22,6 +16,9 @@ function onYouTubeIframeAPIReady () {
     }
   })
 }
+
+// These functions are basicaly a heartbeat to make sure the API
+// is working during developement
 function onBobPlayerReady (event) {
   console.log('ayy I see bob')
   document.getElementById('bob-player').style.borderColor = 'white'
@@ -59,6 +56,7 @@ function changeBorderColor (playerStatus, player) {
   }
 }
 
+// Master mute button functionality
 let muted = false
 function muteAll () {
   if (muted) {
@@ -74,6 +72,7 @@ function muteAll () {
   }
 }
 
+// Master play/pause button functionality
 function playPause () {
   if (bobPlayer.getPlayerState() == 1) {
     bobPlayer.pauseVideo()
@@ -86,21 +85,19 @@ function playPause () {
   }
 }
 
+// Volume mixing
 let masterVolume = 100
 let mixVolume = 20
-
 function volumeChange (value) {
   masterVolume = value
   updateVolumes()
   document.getElementById('volume').innerHTML = `${masterVolume}%`
 }
-
 function mixChange (value) {
   mixVolume = value
   updateVolumes()
   document.getElementById('mix').innerHTML = `${100-value}% / ${value}%`
 }
-
 function updateVolumes() {
   bobPlayer.setVolume( (100-mixVolume) * (masterVolume * 0.01) )
   musicPlayer.setVolume( mixVolume * (masterVolume * 0.01))
