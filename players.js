@@ -1,7 +1,7 @@
 
 // Let the API take control of the players
-let bobPlayer
-let musicPlayer
+var bobPlayer
+var musicPlayer
 function onYouTubeIframeAPIReady () {
   musicPlayer = new YT.Player('music-player', {
     events: {
@@ -57,7 +57,7 @@ function changeBorderColor (playerStatus, player) {
 }
 
 // Master mute button functionality
-let muted = false
+var muted = false
 function muteAll () {
   if (muted) {
     bobPlayer.unMute()
@@ -86,8 +86,8 @@ function playPause () {
 }
 
 // Volume mixing
-let masterVolume = 100
-let mixVolume = 20
+var masterVolume = 100
+var mixVolume = 20
 function volumeChange (value) {
   masterVolume = value
   updateVolumes()
