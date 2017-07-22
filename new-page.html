@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--iframe API: https://developers.google.com/youtube/iframe_api_reference#Examples -->
+  <!-- Bob Ross: https://www.youtube.com/playlist?list=PLAEQD0ULngi67rwmhrkNjMZKvyCReqDV4 -->
+  <title>happy little beats</title>
+  <link rel="shortcut icon" type="image/png" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="happy-little-beats.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/be3b730670.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="bg-wrap">
+    <header>
+      <h1>happy little beats</h1>
+      <p>enjoy the soothing vocals of Bob Ross with lo-fi hip hop</p>
+    </header>
+
+    <section class="controls">
+      <h2>controls</h2>
+      <div class="controls-wrap">
+
+        <div class="control master-volume-wrap">
+          <input id="vol" type="range" value="100" min="0" max="100" step="1" />
+        </div>
+
+        <div class="control fade-volume-wrap">
+          <input id="fade" type="range" value="100" min="0" max="100" step="1" />
+        </div>
+
+        <div class="control playback-wrap fa-2x">
+          <i class="fa fa-pause-circle"></i>
+          <i class="fa fa-play"></i>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="bob">
+    </section>
+
+    <section class="hip">
+    </section>
+
+
+    <footer>
+      <a href="https://github.com/metasloth/happy-little-beats">source</a>
+    </footer>
+  </div>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script type="text/javascript" src="players.js"></script>
+</body>
+
+</html>
